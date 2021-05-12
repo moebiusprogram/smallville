@@ -1,0 +1,9 @@
+{
+  "name": "smallville",
+  "version": "1.0.0",
+  "description": "SmallVilleCoin (SVC)",
+  "repository": "https://github.com/LuisDevJava/SmallVilleCoin",
+  "author": "SmallVille Team",
+  "license": "none",
+  "private": true
+}
