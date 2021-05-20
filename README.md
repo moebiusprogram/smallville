@@ -2,23 +2,16 @@
 
 ![Smallville](https://github.com/LuisDevJava/SmallVilleCoin/blob/master/img/Smallville.png)
 
-## Installation
+## Compilation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the development framework [Truffle](https://www.trufflesuite.com/truffle) to compile the smart contract.
 
 ```bash
-pip install foobar
+truffle build
 ```
 
-## Usage
+## Deploy
 
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
