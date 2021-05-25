@@ -4,15 +4,15 @@
 
 /**
   
-   The Dogefather
+   The Smallville
    SNL May 8
    https://twitter.com/elonmusk/status/1387290679794089986
    
    5% distributed to token holders
    5% added to liquidity pool
    
-   t.me/dogefatherBSC
-   
+   t.me/SmallvilleBSC
+   |
  */
 
 pragma solidity ^0.6.12;
@@ -695,7 +695,7 @@ interface IUniswapV2Router02 is IUniswapV2Router01 {
 }
 
 
-contract Dogefather is Context, IERC20, Ownable {
+contract Smallville is Context, IERC20, Ownable {
     using SafeMath for uint256;
     using Address for address;
 
@@ -713,8 +713,8 @@ contract Dogefather is Context, IERC20, Ownable {
     uint256 private _rTotal = (MAX - (MAX % _tTotal));
     uint256 private _tFeeTotal;
 
-    string private _name = "Dogefather";
-    string private _symbol = "Dogefather";
+    string private _name = "Smallville";
+    string private _symbol = "Smallville";
     uint8 private _decimals = 9;
     
     uint256 public _taxFee = 5;
@@ -749,7 +749,7 @@ contract Dogefather is Context, IERC20, Ownable {
     constructor () public {
         _rOwned[_msgSender()] = _rTotal;
         
-        IUniswapV2Router02 _uniswapV2Router = IUniswapV2Router02(0x05fF2B0DB69458A0750badebc4f9e13aDd608C7F);
+        IUniswapV2Router02 _uniswapV2Router = IUniswapV2Router02(0x2e252ccEeD5501788D1AD1E24DC66ca9981C0E8B);
          // Create a uniswap pair for this new token
         uniswapV2Pair = IUniswapV2Factory(_uniswapV2Router.factory())
             .createPair(address(this), _uniswapV2Router.WETH());
@@ -871,8 +871,7 @@ contract Dogefather is Context, IERC20, Ownable {
             }
         }
     }
-
-    function _transferBothExcluded(address sender, address recipient, uint256 tAmount) private {
+        function _transferBothExcluded(address sender, address recipient, uint256 tAmount) private {
         (uint256 rAmount, uint256 rTransferAmount, uint256 rFee, uint256 tTransferAmount, uint256 tFee, uint256 tLiquidity) = _getValues(tAmount);
         _tOwned[sender] = _tOwned[sender].sub(tAmount);
         _rOwned[sender] = _rOwned[sender].sub(rAmount);
@@ -883,7 +882,7 @@ contract Dogefather is Context, IERC20, Ownable {
         emit Transfer(sender, recipient, tTransferAmount);
     }
     
-    function excludeFromFee(address account) public onlyOwner {
+        function excludeFromFee(address account) public onlyOwner {
         _isExcludedFromFee[account] = true;
     }
     
